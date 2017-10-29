@@ -1,0 +1,801 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="//o768r1c9k.bkt.clouddn.com/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Media Query，即CSS 媒体查询，包含了一个媒体类型和至少一个媒体属性来限制样式表范围的表达式。">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Media Query">
+<meta property="og:url" content="http://blog.heqing.net.cn/2016/07/06/Media-Query/index.html">
+<meta property="og:site_name" content="Cocoon Blog">
+<meta property="og:description" content="Media Query，即CSS 媒体查询，包含了一个媒体类型和至少一个媒体属性来限制样式表范围的表达式。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://o768r1c9k.bkt.clouddn.com/MediaQuery.png">
+<meta property="og:updated_time" content="2016-08-08T05:02:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Media Query">
+<meta name="twitter:description" content="Media Query，即CSS 媒体查询，包含了一个媒体类型和至少一个媒体属性来限制样式表范围的表达式。">
+<meta name="twitter:image" content="http://o768r1c9k.bkt.clouddn.com/MediaQuery.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://blog.heqing.net.cn/2016/07/06/Media-Query/"/>
+
+  <title> Media Query | Cocoon Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80279815-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Cocoon Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">念念不忘，必有回响</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Media Query
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-06T20:04:59+08:00" content="2016-07-06">
+              2016-07-06
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://o768r1c9k.bkt.clouddn.com/MediaQuery.png" alt=""><br>Media Query，即<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries" target="_blank" rel="external">CSS 媒体查询</a>，包含了一个媒体类型和至少一个媒体属性来限制样式表范围的表达式。<br><a id="more"></a></p>
+<h3 id="如何引用-Media-Query"><a href="#如何引用-Media-Query" class="headerlink" title="如何引用 Media Query"></a>如何引用 Media Query</h3><ol>
+<li>在 <code>&lt;link&gt;</code>标签上使用：<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel="stylesheet" media="(max-width:1000px)" href="XXX.css"&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>注意，即使 CSS 不满足 Media Query 的条件，也会被下载下来</strong></p>
+<ol>
+<li>在 CSS 代码中使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media (max-width:1000px)&#123;</div><div class="line">    CSS代码块</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h3><p>and，not，only 可以用来构造复杂的 Media Query</p>
+<ol>
+<li><p>and 操作符用来把多个媒体属性组合起来，合并到同一条媒体查询中。<strong>只有当每个属性都为真时，这条查询的结果才为真。</strong></p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!<span class="selector-tag">--</span>举个栗子：下面这条媒体查询仅在电视媒体上，可视区域不小于700像素宽度并且是横屏时有效<span class="selector-tag">--</span>&gt;</div><div class="line">@<span class="keyword">media</span> tv and (min-width: <span class="number">700px</span>) and (orientation: landscape) &#123; ... &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>not 操作符用来对一条媒体查询的结果进行取反。<strong>注意，是对一条媒体查询的结果，也就是说，要先媒体查询筛选，然后取反，最后才计算 not</strong></p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">    @<span class="keyword">media</span> not all and (monochrome) &#123; ... &#125;</div><div class="line">&lt;!<span class="selector-tag">--</span>等价于<span class="selector-tag">--</span>&gt;</div><div class="line">    @<span class="keyword">media</span> not (all and (monochrome)) &#123; ... &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>only 操作符表示仅在媒体查询匹配成功的情况下应用指定样式（就是老旧的浏览器不认识 CSS3 的一些属性，就不会去执行后面的 CSS 文件，专门给老旧的浏览器使用的，老浏览器只要看到 only ，就不会应用样式）。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel="stylesheet" media="only screen and (color)" href="example.css" /&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="逗号分隔列表"><a href="#逗号分隔列表" class="headerlink" title="逗号分隔列表"></a>逗号分隔列表</h3><p>媒体查询中使用逗号分隔效果等同于 or 逻辑操作符。当使用逗号分隔的媒体查询时，<strong>如果任何一个媒体查询返回真，样式就是有效的。</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">700px</span>), handheld and (orientation: landscape) &#123; ... &#125;</div></pre></td></tr></table></figure></p>
+<p>如上文，如果是一个800像素宽的屏幕设备，媒体语句将会返回真，因为第一部分相当于 @media all and (min-width: 700px) 将会应用于该设备并且返回真，尽管我的屏幕媒体类型并不与第二部分的手持媒体类型相符。同样地，如果我是一个500像素宽的横屏手持设备，尽管第一部分因为宽度问题而不匹配，第二部分仍会成功，因此整个媒体查询返回真。</p>
+<h3 id="几个重要概念"><a href="#几个重要概念" class="headerlink" title="几个重要概念"></a>几个重要概念</h3><ol>
+<li>物理像素：就是实实在在的像素点，屏幕上的一个小圆点代表一个像素，这是物理决定的</li>
+<li>设备独立像素（虚拟像素，密度无关像素）：比如有一些视网膜屏，则会用4个物理像素，去表示原来的一个像素，这样会更细腻，更清楚，比如苹果的 Retina 屏幕</li>
+<li>设备像素比（DPR）：设备像素比 = 物理像素/虚拟像素</li>
+</ol>
+<p>JavaScript 中可以用<code>window.devicePixelRatio</code>获取当前屏幕的设备像素比<br>CSS 中可以用<code>-webkit-device-pixel-ratio</code>获取当前屏幕的设备像素比</p>
+<h3 id="媒体属性"><a href="#媒体属性" class="headerlink" title="媒体属性"></a>媒体属性</h3><blockquote>
+<p>大多数媒体属性带有“min-”和“max-”前缀，用于表达“小于等于”和“大于等于”。这避免了使用与HTML和XML冲突的“&lt;”和“&gt;”字符。如果你未向媒体属性指定一个值，并且该特性的实际值不为零，则该表达式被解析为真。</p>
+</blockquote>
+<ol>
+<li>颜色（color）</li>
+<li>颜色索引（color-index）</li>
+<li>宽高比（aspect-ratio）</li>
+<li>设备宽高比（device-aspect-ratio）</li>
+<li>设备高度（device-height）</li>
+<li>设备宽度（device-width）</li>
+<li>网格（grid）</li>
+<li>高度（height）</li>
+<li>黑白（monochrome）</li>
+<li>方向（orientation）：landscape（横向） portrait（纵向的）</li>
+<li>分辨率（resolution）</li>
+<li>扫描（scan）</li>
+<li>宽度（width）</li>
+</ol>
+<h3 id="测试媒体查询"><a href="#测试媒体查询" class="headerlink" title="测试媒体查询"></a>测试媒体查询</h3><blockquote>
+<p>DOM有这样一种特性，可以通过程序来获得媒体查询的结果。这是通过 <code>MediaQueryList</code> 接口和它的方法来实现的。一旦你创建了<code>MediaQueryList</code> 对象， 你就可以通过它来检查查询结果</p>
+</blockquote>
+<p>在获取查询结果前，你先要创建 <code>MediaQueryList</code> 对象来存放媒体查询。<br>为了实现这个目的，需要使用<code>window.matchMedia</code>方法。</p>
+<p>举个例子，比如你想设置一个查询列表用来判定设备屏幕处于横屏还是竖屏，那你可以像下面这样编码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mql = <span class="built_in">window</span>.matchMedia(<span class="string">"(orientation:portrait)"</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span>(mql.matches)&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"设备屏幕处于竖屏"</span>)</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"设备屏幕处于横屏"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/04/HTML5-New-Elements/" rel="next" title="HTML5 New Elements">
+                <i class="fa fa-chevron-left"></i> HTML5 New Elements
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/09/动态Rem/" rel="prev" title="动态Rem">
+                动态Rem <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="//o768r1c9k.bkt.clouddn.com/photo.jpg"
+               alt="cocoon" />
+          <p class="site-author-name" itemprop="name">cocoon</p>
+          <p class="site-description motion-element" itemprop="description">这是 Huang Heqing 的博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何引用-Media-Query"><span class="nav-number">1.</span> <span class="nav-text">如何引用 Media Query</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑操作符"><span class="nav-number">2.</span> <span class="nav-text">逻辑操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逗号分隔列表"><span class="nav-number">3.</span> <span class="nav-text">逗号分隔列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几个重要概念"><span class="nav-number">4.</span> <span class="nav-text">几个重要概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体属性"><span class="nav-number">5.</span> <span class="nav-text">媒体属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试媒体查询"><span class="nav-number">6.</span> <span class="nav-text">测试媒体查询</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cocoon</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<title>A music player</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1468322273_0966928.css">
+	<meta name="referrer" content="no-referrer"></head>
+	<script src="http://o7awcnd42.bkt.clouddn.com/jquery-2.2.4.js"></script>
+<body>
+	<div class="musicPlayer-wrapper">
+		<div class="musicPlayer">
+			<!-- 音乐封面 -->
+			<div class="front-Cover"></div>
+			<!-- 音乐内容板块 -->
+			<div class="main">
+				<audio src=""></audio>
+				<div class="content">
+					<!-- 歌曲信息 -->
+					<div class="music-Message">
+						<div class="infomation">
+							<p class="musicName"></p>
+							<p class="musicer"></p>
+						</div>
+						<!-- 分享，收藏，喜欢按钮 -->
+					</div>
+					<div class="musicIcon clearfix">
+						<a id="a-share" href="" target="_blank">
+							<div class="share iconfont" title="分享">&#xe602;</div>
+						</a>
+						<div class="collect iconfont" title="收藏">&#xe603;</div>
+						<div class="like iconfont" title="喜欢">&#xe607;</div>
+					</div>
+				</div>
+
+				<!-- <div id="musicTime"></div>
+			-->
+			<audio id="audio" src=""></audio>
+
+			<!-- 歌曲进度条 -->
+			<progress  max=0 value=0></progress>
+
+			<!-- 歌曲控制板块 -->
+			<div class="contorls">
+				<div class="play-Control">
+					<div class="but1 iconfont play" title="播放">&#xe605;</div>
+					<div class="but2 iconfont pause" title="暂停">&#xe608;</div>
+					<div class="but3 iconfont next" title="下一首">&#xe600;</div>
+				</div>
+
+				<div class="music-Control">
+					<div class="cycle iconfont loop" title="循环播放">&#xe604;</div>
+					<div class="color iconfont words" title="显示歌词">&#xe606;</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="main.js"></script>
+
+
+
+</body>
+</html>

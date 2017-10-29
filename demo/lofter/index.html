@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html class="theme theme-white">
+<head>
+<meta charset="utf-8">
+<title>5.7.0 版本的 Lofter 信息架构改版思维过程</title>
+<link href="https://www.zybuluo.com/static/assets/template-theme-white.css" rel="stylesheet" media="screen">
+<style type="text/css">.wmd-input, .wmd-input:focus, #md-section-helper {font-size: 12px !important;line-height: 20px !important;}
+#wmd-preview {font-size: 12px !important;line-height: 20px !important;}
+
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}</style>
+</head>
+<body class="theme theme-white">
+<div id="wmd-preview" class="wmd-preview wmd-preview-full-reader"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="v0ak" id="570-版本的-lofter-信息架构改版思维过程">5.7.0 版本的 Lofter 信息架构改版思维过程</h1><p data-anchor-id="m281"><code>交互设计</code></p><hr><p data-anchor-id="vqs6"><div class="toc"><div class="toc">
+<ul>
+<li><a href="#570-版本的-lofter-信息架构改版思维过程">5.7.0 版本的 Lofter 信息架构改版思维过程</a><ul>
+<li><ul>
+<li><a href="#1使用-persona-定义典型用户">1.使用 persona 定义典型用户</a></li>
+<li><a href="#2用户场景">2.用户场景</a></li>
+<li><a href="#3lofter-目前版本的信息架构">3.Lofter 目前版本的信息架构</a></li>
+<li><a href="#4相关竞品的信息架构">4.相关竞品的信息架构</a><ul>
+<li><a href="#in信息架构">in信息架构</a></li>
+<li><a href="#instagram信息架构">Instagram信息架构</a></li>
+<li><a href="#nice信息架构">Nice信息架构</a></li>
+</ul>
+</li>
+<li><a href="#5共性和差异性分析">5.共性和差异性分析</a><ul>
+<li><a href="#首页分析">首页分析</a></li>
+<li><a href="#发布功能分析">发布功能分析</a></li>
+<li><a href="#其他共性和差异性分析">其他共性和差异性分析</a></li>
+</ul>
+</li>
+<li><a href="#6提取-lofter-的功能卡片">6.提取 Lofter 的功能卡片</a></li>
+<li><a href="#7用户心智模型">7.用户心智模型</a></li>
+<li><a href="#8产出改版后的信息架构树状图">8.产出改版后的信息架构树状图</a></li>
+<li><a href="#9-lofter570版本改版后绘制的-axure-线稿图">9. Lofter(5.7.0版本)改版后绘制的 Axure 线稿图</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</p><div class="md-section-divider"></div><h3 data-anchor-id="nne8" id="1使用-persona-定义典型用户">1.使用 persona 定义典型用户</h3><p data-anchor-id="ljdx">小明：男，高中生，平时喜欢看动漫，听 ACG 音乐，但是周围的小伙伴们爱好不一样，很难找到与自己爱好相同的小伙伴，苦恼没办法讨论最近很火的《进击的巨人第二季》。成为 Lofter 用户后，每天利用上学放学路上刷一下，看看大家的截图、Coser等等，会点赞、评论、分享 ACG音乐。</p><p data-anchor-id="no0p">木子：女，大学生，上了大学以后开始注重自己的外表，想要知道最新的美妆、流行服饰，抛去生活费后手中钱不多，但是很想要买效果好的护肤品，很注重护肤品的评测，以便自己购买。上课无聊的时候刷一下 Lofter，看看最新的博主美妆教程，会看视频中的化妆方法，会转发、保存、推荐给闺密。</p><p data-anchor-id="p2ap">小健：男，大学生，喜欢摄影，买了自己的单反后，摄影技术超烂，想要提高自己的摄影技术，需要多看小伙伴的构图，以及拍摄方法、心得等等。同时自己拍完后也会发布在 Lofter 上，期待小伙伴的指点，认识更多的厉害的大神。</p><p data-anchor-id="oc0u">露露：女，上班族，枯燥的日常使得自己很关注网络热点、明星的动态、以及对于各种好看的男孩子都会流口水。经常没事的时候刷新一下 lofter，看看自己关注的可爱的男孩子有没有新动态，男神最近在干嘛，或者是某某明星的绯闻等等，会参与粉丝之间的讨论，以及抱怨一下领导。</p><p data-anchor-id="fmsq">木桐：男，上班族，养了自己的爱宠，作为一个铲屎官，每天最关心的是自己的小祖宗吃的好不好、开不开心，怎么才能伺候好它、以及拍好自己的爱宠。使用 lofter 后，关注的宠物类的话题，吸收经验，分享美图、GIF 以及铲屎官的哀怨心情。</p><blockquote data-anchor-id="brcu" class="white-blockquote">
+  <p>初步定义用户特征： <br>
+      通过以上的 persona 提取出来的用户特征，一般使用 Lofter 的人群是喜爱图片社交的人群，发图看图看视频，偶尔分享一下音乐、文字，寻找志同道合的小伙伴，年龄普遍较为年轻。</p>
+</blockquote><div class="md-section-divider"></div><h3 data-anchor-id="eyu4" id="2用户场景">2.用户场景</h3><p data-anchor-id="2z2h">用户使用 Lofter 查看自己感兴趣的话题，并且分享图片、音乐、视频、文字等等。 <br>
+用户最关心的是结交朋友、用户之间的互动、发布内容的便捷性、话题分类是否精确。 <br>
+有“我的”、“发现”、“发布”、“消息”这些导航按钮，并且发布按钮一定是在底部导航的中间，打开 APP 后直接看到关注人的动态。 <br>
+用户可能还使用 in、nice、Instagram 等等图片社交类 APP。</p><div class="md-section-divider"></div><h3 data-anchor-id="zrsy" id="3lofter-目前版本的信息架构">3.Lofter 目前版本的信息架构</h3><p data-anchor-id="h9uq"><a href="http://static.zybuluo.com/cocoon/xr5a3zmbe7hqx7rjm5t6oqsg/Lofter%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%84.pdf" class="attachment-block" target="_blank"><i class="icon-file-alt icon-4x"></i><span class="attachment-filename">Lofter信息结构.pdf</span><span class="attachment-filesize">67.1kB</span></a></p><div class="md-section-divider"></div><h3 data-anchor-id="94p5" id="4相关竞品的信息架构">4.相关竞品的信息架构</h3><div class="md-section-divider"></div><h4 data-anchor-id="0hgr" id="in信息架构">in信息架构</h4><p data-anchor-id="g4sk"><a href="http://static.zybuluo.com/cocoon/36dn1kst5s881p536g5qovr1/In%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%84.pdf" class="attachment-block" target="_blank"><i class="icon-file-alt icon-4x"></i><span class="attachment-filename">In信息结构.pdf</span><span class="attachment-filesize">76kB</span></a></p><div class="md-section-divider"></div><h4 data-anchor-id="1d4r" id="instagram信息架构">Instagram信息架构</h4><p data-anchor-id="ytdp"><a href="http://static.zybuluo.com/cocoon/cu54jmvpjo2krxt7ydjmxo48/Instagram%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%84.pdf" class="attachment-block" target="_blank"><i class="icon-file-alt icon-4x"></i><span class="attachment-filename">Instagram信息结构.pdf</span><span class="attachment-filesize">51.5kB</span></a></p><div class="md-section-divider"></div><h4 data-anchor-id="dody" id="nice信息架构">Nice信息架构</h4><p data-anchor-id="gyy0"><a href="http://static.zybuluo.com/cocoon/81u5d35ttucbrjt456yai7u7/Nice%E4%BF%A1%E6%81%AF%E6%9E%B6%E6%9E%84.pdf" class="attachment-block" target="_blank"><i class="icon-file-alt icon-4x"></i><span class="attachment-filename">Nice信息架构.pdf</span><span class="attachment-filesize">70.1kB</span></a></p><div class="md-section-divider"></div><h3 data-anchor-id="bl20" id="5共性和差异性分析">5.共性和差异性分析</h3><div class="md-section-divider"></div><h4 data-anchor-id="88k6" id="首页分析">首页分析</h4><p data-anchor-id="4r4v"><img src="http://static.zybuluo.com/cocoon/02lnrkhrxqbcntyllc1wm1ks/image_1bgn30a4u1ji7p4s6u81est1mc71t.png" alt="image_1bgn30a4u1ji7p4s6u81est1mc71t.png-102.2kB" title=""></p><p data-anchor-id="30kd"><img src="http://static.zybuluo.com/cocoon/uz2hrxkmrzpaslebng79u010/image_1bgn3toohr4v1c7n1u3h7db1hej3s.png" alt="image_1bgn3toohr4v1c7n1u3h7db1hej3s.png-75.2kB" title=""></p><div class="md-section-divider"></div><h4 data-anchor-id="dldr" id="发布功能分析">发布功能分析</h4><p data-anchor-id="k19s">以下分别是 In、Lofter、instagram 的发布页面</p><p data-anchor-id="5z7d"><img src="http://static.zybuluo.com/cocoon/bwqk5k2vsde3tigzrarwlfud/image_1bgn3dflv1qk31povk24l6d1mko3a.png" alt="image_1bgn3dflv1qk31povk24l6d1mko3a.png-105.4kB" title=""></p><p data-anchor-id="fwof"><img src="http://static.zybuluo.com/cocoon/8wa4p7zns71qm2wr4907n0ex/image_1bgn3sd5gncbrnmkeu1vvajrv2v.png" alt="image_1bgn3sd5gncbrnmkeu1vvajrv2v.png-54.8kB" title=""></p><div class="md-section-divider"></div><h4 data-anchor-id="xybm" id="其他共性和差异性分析">其他共性和差异性分析</h4><p data-anchor-id="ozw3">共性： <br>
+1. “添加好友”这个功能，在4款 APP 中均有多个入口可以进入，并且入口都摆放在了较明显的位置。比如 in 和 Lofter 都在首页的右上方，instagram 放在了“我”的左上方，nice 甚至都在首页的中间推荐好友，用大大的按钮吸引用户。 <br>
+2. 在用户使用“搜索”的时候，都会提供热门推荐，方便无目标用户找到想看的内容。 <br>
+3. 在“首页”中，都会直接显示用户关注人的信息流，因为对于图片类的社交产品，用户关注的人往往是最重要的东西 <br>
+4. 在“发布”的右侧往往都是“消息”，in 的消息被归纳到看“in记”的右上方，其他的都是直接在“发布”旁，这是因为消息对于用户来说是社交重要的一部分，需要快速进入快速回复。</p><p data-anchor-id="qg6d">差异性： <br>
+每款社交的侧重点不一样，nice 主打的是标签，正如它的 slogan 是“标记生活的美好”一样；in 则选择了话题+标签，发起和参与话题进行图片的社交；lofter 则是主打的兴趣专题，lofter 的“发现”分类领域是这4款 APP 中最细致的，并且也在发现中主打专题；而 Instagram 则是图片社交的鼻祖，一直主打的就是拍摄，拍摄图片、视频等等进行社交。</p><div class="md-section-divider"></div><h3 data-anchor-id="7j5n" id="6提取-lofter-的功能卡片">6.提取 Lofter 的功能卡片</h3><p data-anchor-id="jec8"><a href="http://static.zybuluo.com/cocoon/02hig0ne59k9lr4detpjguu1/Lofter%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%84.pdf" class="attachment-block" target="_blank"><i class="icon-file-alt icon-4x"></i><span class="attachment-filename">Lofter信息结构.pdf</span><span class="attachment-filesize">67.1kB</span></a></p><p data-anchor-id="lltz"><img src="http://static.zybuluo.com/cocoon/5tq8sp3ceo0aodh1rus4jwtj/image_1bgn3reof1r9h1c33p1o1lo41ndn2i.png" alt="image_1bgn3reof1r9h1c33p1o1lo41ndn2i.png-37.3kB" title=""></p><p data-anchor-id="e0oy">上面表格中的功能卡片，黑色的是现版本 Lofter 所带有的，红色的则是我针对自己的使用感觉，想要添加上去的功能。</p><p data-anchor-id="vnkj">目标用户的选择: <br>
+木子：女，大学生，上了大学以后开始注重自己的外表，想要知道最新的美妆、流行服饰，抛去生活费后手中钱不多，但是很想要买效果好的护肤品，很注重护肤品的评测，以便自己购买。上课无聊的时候刷一下 Lofter，看看最新的博主美妆教程，会看视频中的化妆方法，会转发、保存、推荐给闺密。</p><p data-anchor-id="24xf"><img src="http://static.zybuluo.com/cocoon/p62rn89h4fno2cna4ashfw2c/image_1bgn3uvk6qpb1juuqad11i51sob49.png" alt="image_1bgn3uvk6qpb1juuqad11i51sob49.png-18.9kB" title=""></p><p data-anchor-id="wdhr">一号用户第一次分类：</p><p data-anchor-id="tw3i"><img src="http://static.zybuluo.com/cocoon/whw4929hptsvwxwxabp5504h/image_1bgn3vcv1vt14nr1r7moap1cet4m.png" alt="image_1bgn3vcv1vt14nr1r7moap1cet4m.png-45.3kB" title=""></p><p data-anchor-id="1lfa">一号用户第二次分类：</p><p data-anchor-id="o1wl"><img src="http://static.zybuluo.com/cocoon/o966c4jev3j9julu93o7futp/image_1bgn3vni735h7ien8212pi158i53.png" alt="image_1bgn3vni735h7ien8212pi158i53.png-43.2kB"></p><blockquote data-anchor-id="88ns" class="white-blockquote">
+  <p>这里面有一个有意思的点是，在我没有提醒的情况下，用户自己将“发布”这个相关的一列调到了中间，问原因，说觉得这样舒服一点……</p>
+</blockquote><p data-anchor-id="c02i">根据用户的卡片分类，整理了用户心智模型。</p><div class="md-section-divider"></div><h3 data-anchor-id="0tgf" id="7用户心智模型">7.用户心智模型</h3><p data-anchor-id="eiun"><a href="http://static.zybuluo.com/cocoon/e8aa0vjb9y8rt5i9rjb319hk/%E7%94%A8%E6%88%B7%E5%BF%83%E6%99%BA%E6%A8%A1%E5%9E%8B.pdf" class="attachment-block" target="_blank"><i class="icon-file-alt icon-4x"></i><span class="attachment-filename">用户心智模型.pdf</span><span class="attachment-filesize">54.6kB</span></a></p><p data-anchor-id="plz4">总结： <br>
+1. 用户对于“首页”的功能，具有很强的个人感，不希望在“首页”看到自己不想看的内容，只想要看自己关注的、订阅的好友内容 <br>
+2. 用户对于“发现”这一栏，是希望得到内容的推荐的，但是貌似都集中在了这里。 <br>
+3. “发布”这一览很有意思，用户自己选择将“发布”放在了最中间，并且对于发布的定义很清楚，直接希望同时多平台“发布”。 <br>
+4. “搜索”这一栏则是表明了用户想要单独有入口进入 <br>
+5. “我的”这一览，很像“Nice”的风格，将“消息”整合进入了“我的”里面，在上面的“Nice”的架构图中也有这样体现。</p><div class="md-section-divider"></div><h3 data-anchor-id="a6nn" id="8产出改版后的信息架构树状图">8.产出改版后的信息架构树状图</h3><p data-anchor-id="0tkv"><a href="http://static.zybuluo.com/cocoon/jf9oi1q33ia57ft7vjxlvc1c/Lofter%20%E6%94%B9%E7%89%88%E4%BF%A1%E6%81%AF%E6%9E%B6%E6%9E%84%E5%9B%BE.pdf" class="attachment-block" target="_blank"><i class="icon-file-alt icon-4x"></i><span class="attachment-filename">Lofter 改版信息架构图.pdf</span><span class="attachment-filesize">71.1kB</span></a></p><ol data-anchor-id="cn6m">
+<li>虽然用户有自己的需求，但是结合业务需求，比如说“福利集市”和“乐乎印品”这两部分，很难做到一个满意的调整，但是这里是改版，所以还是调整到了“发现”那一栏里面。</li>
+<li>然后是一个从其他 APP 中导入之前的发布信息，这个可以单独放在设置里面。并且将用户很重视的夜间模式调到了二级入口。</li>
+<li>其次是摄影课堂，这个移动到了“发布”那一栏，用户在发布的时候，有非常大的几率这个时候选择进入摄影课堂学习两三分钟拍摄，但是如果有想要迅速拍摄，也不妨碍直接拍摄。</li>
+<li>由于“消息”对于用户的互动和留存有很大的作用，所以放在二级入口不是一个很好的选择，用户想要及时回复消息时，也会造成障碍，所以还是放在了一级导航入口。</li>
+</ol><div class="md-section-divider"></div><h3 data-anchor-id="2onv" id="9-lofter570版本改版后绘制的-axure-线稿图">9. Lofter(5.7.0版本)改版后绘制的 Axure 线稿图</h3><p data-anchor-id="sh63"><a href="http://blog.heqing.net.cn/demo/lofter/axure" target="_blank">5.7.0 版本 Lofter 改版后绘制的 Axure 线稿图</a></p></div>
+</body>
+</html>

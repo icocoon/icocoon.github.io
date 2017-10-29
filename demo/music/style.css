@@ -1,0 +1,366 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face
+{
+    font-family: 'iconfont';
+
+    src: url('//at.alicdn.com/t/font_1468322272_8213267.eot'); /* IE9*/
+    src: url('//at.alicdn.com/t/font_1468322272_8213267.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_1468322272_8213267.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/font_1468322272_8213267.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/font_1468322272_8213267.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.clearfix::after
+{
+    display: block;
+    clear: both;
+
+    content: '';
+}
+
+.iconfont
+{
+    font-family: BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Microsoft YaHei, serif;
+    font-size: .16rem;
+}
+
+html
+{
+    font-size: 100px;
+
+    height: 100%;
+}
+
+body
+{
+    height: 100%;
+
+    background-image: url('http://o768r1c9k.bkt.clouddn.com/backgroudC.png');  
+    background-repeat:no-repeat;
+    background-size:cover;
+    
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 音乐封面 */
+
+.musicPlayer-wrapper
+{
+    line-height: 1;
+
+    height: 100%;
+
+    text-align: center;
+}
+
+.musicPlayer-wrapper::before
+{
+    display: inline-block;
+
+    height: 100%;
+
+    content: '';
+    vertical-align: middle;
+}
+
+.musicPlayer
+{
+    display: inline-block;
+
+    width: 4.4rem;
+    height: 5rem;
+
+    vertical-align: middle;
+
+    -webkit-border-radius: 20px;
+            border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 8px 10px #999;
+}
+
+.musicPlayer-wrapper::after
+{
+    display: inline-block;
+
+    height: 100%;
+
+    content: '';
+    vertical-align: middle;
+}
+
+
+.front-Cover
+{
+    height: 2.7rem;
+
+    -webkit-border-radius: 10px 10px 0 0;
+            border-radius: 10px 10px 0 0;
+}
+
+.main
+{
+    border-radius: 0 0 10px 10px;
+    background-color: #eef1f2;
+}
+
+.content
+{
+    height: 1rem;
+    margin-bottom: .11rem;
+    padding-top: .05rem;
+}
+
+/* 歌曲信息 */
+.music-Message
+{
+    display: inline;
+
+    height: 1.2rem;
+}
+
+.infomation
+{
+    font-size: .16rem;
+
+    width: 2.8rem;
+    height: 1rem;
+    margin: .2rem 0rem .2rem .2rem;
+}
+
+.musicName
+{
+    font-size: .28rem;
+
+    margin-bottom: .05rem;
+
+    text-align: left;
+}
+
+.musicer
+{
+    margin-left: .03rem;
+
+    text-align: left;
+}
+
+.musicIcon
+{
+    font-size: .28px;
+
+    float: right;
+
+    width: 1.2rem;
+    margin-top: -1.18rem;
+}
+
+/* 分享，收藏，喜欢按钮 */
+.musicIcon div
+{
+    font-size: .20rem;
+
+    float: left;
+
+    margin-left: .12rem;
+
+    transition: font-size .4s;
+    transition: color .2s;
+    vertical-align: center;
+
+    color: #cdd2d7;
+}
+
+.musicIcon > #a-share > .share
+{
+    font-size: .20rem;
+
+    float: left;
+
+    margin-left: .12rem;
+
+    transition: font-size .4s;
+    transition: color .2s;
+    vertical-align: center;
+
+    color: #52afb3;
+}
+
+
+.like
+{
+    margin-top: 2px;
+}
+
+.musicIcon div:hover
+{
+    cursor: pointer;
+}
+
+.musicIcon > #a-share > .share:hover
+{
+    color: #b92500;
+}
+.musicIcon > .like:hover
+{
+    font-size: .22rem;
+
+    color: #b92500;
+}
+.musicIcon > .collect:hover
+{
+    color: #b92500;
+}
+
+
+/* #musicTime{
+    font-size: .12rem;
+    position: absolute;
+    bottom: 0.005rem;
+    margin-left: 4rem
+}
+ */
+
+
+/* 歌曲进度条 */
+progress
+{
+    position: relative;
+
+    display: block;
+
+    width: 4rem;
+    height: .04rem;
+    margin: .15rem auto .1rem auto;
+
+    color: #b92500;
+    border: none;
+    border-radius: .02rem;
+    background-color: #808080;
+}
+/* progress-bar指全部的进度 */
+progress::-webkit-progress-bar
+{
+    background: #808080;
+}
+/* progress-value指已经完成的进度 */
+progress::-webkit-progress-value
+{
+    background: #b92500;
+}
+/* 歌曲控制板块 */
+
+.contorls
+{
+    height: .6rem;
+    padding: .2rem .22rem;
+}
+
+.contorls > .play-Control
+{
+    float: left;
+
+    margin-right: 2.3rem;
+}
+
+
+.contorls > .play-Control div
+{
+    font-size: .24rem;
+
+    float: left;
+
+    margin-right: .05rem;
+
+    vertical-align: center;
+}
+
+.contorls > .play-Control .but1
+{
+    font-size: .32rem;
+
+    opacity: .8;
+}
+
+.contorls .but2,
+.but3,
+.cycle,
+.color
+{
+    margin-top: .04rem;
+
+    transition: color .2s;
+
+    opacity: .8;
+    color: #414141;
+}
+
+.play-Control > .but2
+{
+    margin-top: .06rem;
+}
+
+.contorls > .music-Control div
+{
+    font-size: .20rem;
+
+    float: left;
+
+    margin-right: .1rem;
+}
+
+
+.music-Control > .cycle:hover
+{
+    cursor: pointer;
+    transition: color .2s;
+
+    color: #b92500;
+}
+
+.music-Control > .color:hover
+{
+    cursor: pointer;
+    transition: color .2s;
+
+    color: #b92500;
+}
+
+.but1:hover
+{
+    cursor: pointer;
+
+    color: #b92500;
+}
+.but2:hover
+{
+    cursor: pointer;
+
+    color: #b92500;
+}
+.but3:hover
+{
+    cursor: pointer;
+
+    color: #b92500;
+}
+
+.musicIcon > .collect-color
+{
+    color: #52afb3;
+}
+.musicIcon > .like-color
+{
+    color: #b92500;
+}
+.music-Control > .loop-color
+{
+    color: #b92500;
+}
+.music-Control > .words-display
+{
+    color: #b92500;
+}

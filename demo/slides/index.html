@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<title>carousel slide</title>
+	<script src="http://o7awcnd42.bkt.clouddn.com/jquery-2.2.4.js"></script>
+	<script src='jquery.slides.js'></script>
+	<link rel="stylesheet" type="text/css" href="style.css"></head>
+<body>
+	<!-- 导航栏的 HTML -->
+	<header>
+		<div class="nav-bar cleanfix">
+
+			<img src="image/logo.svg">
+
+			<div class="list-wrapper">
+				<ul class='nav-list cleanfix'>
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">定制旅行</a>
+					</li>
+					<li>
+						<a href="#">经典自由行</a>
+					</li>
+					<li>
+						<a href="#">案例故事</a>
+					</li>
+					<li>
+						<a href="#">关于我们</a>
+					</li>
+				</ul>
+			</div>
+
+			<a href="#" class="contact">
+				<img src="image/contact-logo.png">
+				<p>400 890 3040</p>
+			</a>
+
+			<div class="user-log">
+				<a href="#">登录</a>
+				<a>
+					<span class="split"></span>
+				</a>
+				<a href="#">注册</a>
+			</div>
+		</div>
+	</header>
+
+	<div class="images-area">
+        <div class='pore'>
+			<div id="slides">
+				<img src="http://o768r1c9k.bkt.clouddn.com/image3.jpg">
+				<img src="http://o768r1c9k.bkt.clouddn.com/image2.jpg">
+				<img src="http://o768r1c9k.bkt.clouddn.com/image1.jpg">
+			</div>
+        </div>
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+      		$("#slides").slidesjs({
+        		width: 1200,
+       			height: 440,
+       			navigation: true,
+       			play: {
+			      active: false,
+			        // [boolean] Generate the play and stop buttons.
+			        // You cannot use your own buttons. Sorry.
+			      effect: "slide",
+			        // [string] Can be either "slide" or "fade".
+			      interval: 4000,
+			        // [number] Time spent on each slide in milliseconds.
+			      auto: true,
+			        // [boolean] Start playing the slideshow on load.
+			      swap: true,
+			        // [boolean] show/hide stop and play buttons
+			      pauseOnHover: true,
+			        // [boolean] pause a playing slideshow on hover
+			      restartDelay: 2500
+			        // [number] restart delay on inactive slideshow
+			    }
+    		});
+		});
+
+	</script>
+</body>
+</html>

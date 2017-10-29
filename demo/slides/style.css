@@ -1,0 +1,258 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face
+{
+    font-family: 'iconfont';
+
+    src: url('//at.alicdn.com/t/font_1471938287_5025234.eot'); /* IE9*/
+    src: url('//at.alicdn.com/t/font_1471938287_5025234.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_1471938287_5025234.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/font_1471938287_5025234.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/font_1471938287_5025234.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+
+
+.iconfont
+{
+    font-family: 'iconfont';
+    font-size: 16px;
+    font-style: normal;
+}
+
+
+body
+{
+    font-family: 'PingHei', 'PingFang SC','Microsoft YaHei', 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif;
+
+    box-sizing: border-box;
+
+    background-color: #f5f4ef;
+}
+
+ul,
+ol
+{
+    list-style: none;
+
+    text-align: center;
+}
+
+
+a
+{
+    text-decoration: none;
+}
+
+.cleanfix::after
+{
+    display: block;
+    clear: both;
+
+    content: '';
+}
+
+header
+{
+    display: inline-block;
+
+    width: 100%;
+    height: 72px;
+    margin-bottom: 30px;
+
+    vertical-align: baseline;
+
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fff;
+}
+
+header > .nav-bar
+{
+    display: block;
+
+    width: 1140px;
+    margin: 0 auto;
+    margin-top: 14px;
+}
+
+
+.nav-bar > img,
+.list-wrapper,
+.contact
+{
+    float: left;
+}
+
+.nav-bar > img
+{
+    cursor: pointer;
+}
+
+
+
+.user-log
+{
+    float: right;
+}
+
+.nav-bar > img
+{
+    line-height: 44px;
+
+    width: 140px;
+    height: 44px;
+}
+
+.nav-list
+{
+    font-size: 14px;
+
+    margin-top: 14px;
+    margin-right: 40px;
+}
+
+.nav-list li
+{
+    float: left;
+}
+
+.nav-list a
+{
+    margin-left: 30px;
+
+    color: #3e3a39;
+}
+
+.nav-list a:hover
+{
+    border-bottom: 2px solid #669797;
+}
+
+.contact
+{
+    display: inline-block;
+
+    margin-top: 8px;
+
+    border: 1px solid #969696;
+    border-radius: 2px;
+}
+
+.contact img
+{
+    width: 30px;
+    height: 30px;
+
+    vertical-align: bottom;
+
+    border-radius: 0 2px 2px 0;
+    background-color: #969696;
+}
+.contact p
+{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+
+    float: right;
+
+    height: 30px;
+    padding: 0 5px;
+
+    color: #969696;
+}
+.user-log
+{
+    line-height: 44px;
+}
+
+.user-log
+{
+    display: inline-block;
+}
+
+.user-log a
+{
+    float: left;
+
+    margin: 0 3px;
+
+    color: #6f9b9c;
+}
+
+.split
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 1px;
+    height: 15px;
+
+    vertical-align: middle;
+
+    background: #6f9b9c;
+}
+/* 以上是导航栏的 css */
+
+
+.images-area
+{
+    width: 1200px;
+    height: 440px;
+    margin: 0 auto;
+}
+
+
+.pore
+{
+    position: relative;
+}
+
+.slidesjs-pagination
+{
+    position: absolute;
+    z-index: 10;
+    bottom: 10px;
+    left: 560px;
+}
+
+.slidesjs-pagination > li
+{
+    line-height: 20px;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+
+    text-align: center;
+
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.slidesjs-pagination > li a
+{
+    color: #77b5b5;
+}
+
+.slidesjs-pagination > li > a.active
+{
+    line-height: 20px;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+
+    color: #fff;
+    border-radius: 50%;
+    background-color: #77b5b5;
+}

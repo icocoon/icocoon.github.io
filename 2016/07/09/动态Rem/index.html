@@ -1,0 +1,777 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="//o768r1c9k.bkt.clouddn.com/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="提到rem，首先想到的就是字体的设置，类似的比如 px、pt、em等等。 但是rem可以做移动端(主要是手机，在不同的手机上看到相同的界面)的响应式页面。">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动态Rem">
+<meta property="og:url" content="http://blog.heqing.net.cn/2016/07/09/动态Rem/index.html">
+<meta property="og:site_name" content="Cocoon Blog">
+<meta property="og:description" content="提到rem，首先想到的就是字体的设置，类似的比如 px、pt、em等等。 但是rem可以做移动端(主要是手机，在不同的手机上看到相同的界面)的响应式页面。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://o768r1c9k.bkt.clouddn.com/%E5%8A%A8%E6%80%81%20rem.jpg">
+<meta property="og:image" content="http://o768r1c9k.bkt.clouddn.com/Rem%E5%85%BC%E5%AE%B9%E6%80%A7.png">
+<meta property="og:image" content="http://o768r1c9k.bkt.clouddn.com/5.png">
+<meta property="og:image" content="http://o768r1c9k.bkt.clouddn.com/6.png">
+<meta property="og:image" content="http://o768r1c9k.bkt.clouddn.com/6p.png">
+<meta property="og:updated_time" content="2016-08-08T05:02:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="动态Rem">
+<meta name="twitter:description" content="提到rem，首先想到的就是字体的设置，类似的比如 px、pt、em等等。 但是rem可以做移动端(主要是手机，在不同的手机上看到相同的界面)的响应式页面。">
+<meta name="twitter:image" content="http://o768r1c9k.bkt.clouddn.com/%E5%8A%A8%E6%80%81%20rem.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://blog.heqing.net.cn/2016/07/09/动态Rem/"/>
+
+  <title> 动态Rem | Cocoon Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80279815-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Cocoon Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">念念不忘，必有回响</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                动态Rem
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-09T19:12:02+08:00" content="2016-07-09">
+              2016-07-09
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://o768r1c9k.bkt.clouddn.com/%E5%8A%A8%E6%80%81%20rem.jpg" alt=""></p>
+<p>提到<code>rem</code>，首先想到的就是字体的设置，类似的比如 px、pt、em等等。</p>
+<p>但是<code>rem</code>可以做移动端(主要是手机，在不同的手机上看到相同的界面)的响应式页面。</p>
+<a id="more"></a>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>在<a href="http://caniuse.com/" target="_blank" rel="external">Can I use</a>网站中查询如图所示：<br><img src="http://o768r1c9k.bkt.clouddn.com/Rem%E5%85%BC%E5%AE%B9%E6%80%A7.png" alt=""></p>
+<p>基本都支持了</p>
+<h3 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h3><p>rem是（font size of the root element），根据翻译就是<strong>根据网页的根元素来设置字体大小</strong>，这样一来，就与 em 区别了，em 是根据父元素的字体大小来设置，rem是根据网页的跟元素（html）来设置字体大小的。</p>
+<blockquote>
+<p>大部分浏览器IE9+，Firefox、Chrome、Safari、Opera ，如果我们不修改相关的字体配置，都是默认显示font-size是16px</p>
+</blockquote>
+<p>所以下列的代码的意思就是给P标签设置12px的字体大小（16*0.75=12）<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">0.75em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果用户自己设置了浏览器的默认字体大小， rem也会跟着用户的调整的大小改变。<br><strong>rem不仅可以适用于字体，同样可以用于width height margin这些样式的单位。</strong></p>
+<h3 id="rem-的数值计算"><a href="#rem-的数值计算" class="headerlink" title="rem 的数值计算"></a>rem 的数值计算</h3><p>一般来讲，利用rem来设置css的值，要通过一层计算才行，比如如果要设置一个长宽为100px的div，那么就需要计算出100px对应的rem值是 100 / 16 =6.25rem，这在我们写css中，其实算比较繁琐的一步操作了。</p>
+<p>为了方便起见，可以将html的font-size设置成100px，这样在写单位时，直接将数值除以100在加上rem的单位就可以了。</p>
+<p>比如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">4rem</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">4rem</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面就创建了一个宽为400px，高为400px，背景颜色为红色的div</p>
+<h3 id="动态设置-rem-的值"><a href="#动态设置-rem-的值" class="headerlink" title="动态设置 rem 的值"></a>动态设置 rem 的值</h3><p>如何动态的设定 rem 的值，使适应不同的设备呢？<br>可以用 JavaScript 来设置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取当前设备页面的宽度，赋值给 pageWidth</span></div><div class="line"><span class="keyword">var</span> pageWidth = <span class="built_in">document</span>.documentElement.clientWidth</div><div class="line"><span class="comment">//将一个完整的 HTML 的根元素设定字体大小的语句赋值给 content</span></div><div class="line"><span class="keyword">var</span> content = <span class="string">'html&#123;font-size: '</span>+pageWidth/<span class="number">10</span>+<span class="string">'px&#125;;'</span></div><div class="line"><span class="comment">//创建一个 style 的标签</span></div><div class="line"><span class="keyword">var</span> style = <span class="built_in">document</span>.createElement(<span class="string">'style'</span>)</div><div class="line"><span class="comment">//将 content 的内容写入 style 标签</span></div><div class="line">style.innerHTML = content</div><div class="line"><span class="comment">//将 style 插入 head 标签内部</span></div><div class="line"><span class="built_in">document</span>.head.appendChild(style)</div></pre></td></tr></table></figure>
+<p>通过上面的 JS 就能动态的获取到当前页面的宽度，并且写入 head 标签中。</p>
+<h3 id="栗子"><a href="#栗子" class="headerlink" title="栗子"></a>栗子</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"A"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"B"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">*&#123;<span class="attribute">padding</span>:<span class="number">0</span>;<span class="attribute">margin</span>:<span class="number">0</span>&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">  <span class="attribute">width</span>:<span class="number">5rem</span>;</div><div class="line">  <span class="attribute">height</span>:<span class="number">2.5rem</span>;</div><div class="line">  <span class="attribute">float</span>:left;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.A</span>&#123;</div><div class="line">  <span class="attribute">background-color</span>:<span class="number">#f29599</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.B</span>&#123;</div><div class="line">  <span class="attribute">background-color</span>:<span class="number">#90c0c0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取当前设备页面的宽度，赋值给 pageWidth</span></div><div class="line"><span class="keyword">var</span> pageWidth = <span class="built_in">document</span>.documentElement.clientWidth</div><div class="line"><span class="comment">//将一个完整的 HTML 的根元素设定字体大小的语句赋值给 content，注意这里除以10了，所以 1rem 等于十分之一的页面宽度。</span></div><div class="line"><span class="keyword">var</span> content = <span class="string">'html&#123;font-size: '</span>+pageWidth*<span class="number">0.1</span>+<span class="string">'px&#125;;'</span></div><div class="line"><span class="comment">//创建一个 style 的标签</span></div><div class="line"><span class="keyword">var</span> style = <span class="built_in">document</span>.createElement(<span class="string">'style'</span>)</div><div class="line"><span class="comment">//将 content 的内容写入 style 标签</span></div><div class="line">style.innerHTML = content</div><div class="line"><span class="comment">//将 style 插入 head 标签内部</span></div><div class="line"><span class="built_in">document</span>.head.appendChild(style)</div></pre></td></tr></table></figure>
+<p>上面的代码就创建了两个 div，无论在什么设备都会占据整个页面的宽度，和页面宽度一半的高度。</p>
+<p>比如：</p>
+<p><img src="http://o768r1c9k.bkt.clouddn.com/5.png" width="375px" height="667px"><br><img src="http://o768r1c9k.bkt.clouddn.com/6.png" width="375px" height="667px"><br><img src="http://o768r1c9k.bkt.clouddn.com/6p.png" width="375px" height="667px"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/06/Media-Query/" rel="next" title="Media Query">
+                <i class="fa fa-chevron-left"></i> Media Query
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/11/CSS动画/" rel="prev" title="CSS动画">
+                CSS动画 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="//o768r1c9k.bkt.clouddn.com/photo.jpg"
+               alt="cocoon" />
+          <p class="site-author-name" itemprop="name">cocoon</p>
+          <p class="site-description motion-element" itemprop="description">这是 Huang Heqing 的博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性"><span class="nav-number">1.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rem"><span class="nav-number">2.</span> <span class="nav-text">rem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rem-的数值计算"><span class="nav-number">3.</span> <span class="nav-text">rem 的数值计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态设置-rem-的值"><span class="nav-number">4.</span> <span class="nav-text">动态设置 rem 的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#栗子"><span class="nav-number">5.</span> <span class="nav-text">栗子</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cocoon</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

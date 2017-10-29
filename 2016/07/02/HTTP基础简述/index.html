@@ -1,0 +1,810 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HTTP," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="//o768r1c9k.bkt.clouddn.com/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="首先要了解基本的知识，以及与 HTTP 相关的一些协议。">
+<meta name="keywords" content="HTTP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简述HTTP">
+<meta property="og:url" content="http://blog.heqing.net.cn/2016/07/02/HTTP基础简述/index.html">
+<meta property="og:site_name" content="Cocoon Blog">
+<meta property="og:description" content="首先要了解基本的知识，以及与 HTTP 相关的一些协议。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1806506-f9be6356d7022117.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1806506-94c8085e803c5632.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-08-08T05:06:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简述HTTP">
+<meta name="twitter:description" content="首先要了解基本的知识，以及与 HTTP 相关的一些协议。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1806506-f9be6356d7022117.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://blog.heqing.net.cn/2016/07/02/HTTP基础简述/"/>
+
+  <title> 简述HTTP | Cocoon Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80279815-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Cocoon Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">念念不忘，必有回响</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                简述HTTP
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-02T00:00:00+08:00" content="2016-07-02">
+              2016-07-02
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>首先要了解基本的知识，以及与 HTTP 相关的一些协议。</p>
+<a id="more"></a>
+<p>RFC：俗称互联网设计文档，制定 HTTP 协议的标准文档</p>
+<blockquote>
+<p>什么是协议：<br>计算机与网络设备相互想要通信，就必须要有一种规则，规定一系列的事情，比如谁先发起通信啊，用什么语言通信啊，怎么结束啊。万一你和我是不同的操作系统怎么办啊。<br>所以这个时候，协议就诞生了。</p>
+</blockquote>
+<h3 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h3><p>我们要上网，就一定要用 TCP/IP 协议族，http 协议是它的子集。</p>
+<p><strong>一般可以认为互联网相关的协议都集合起来就是 TCP/IP 协议族。</strong></p>
+<blockquote>
+<p>TCP/IP 协议族重要的一点就是分层，那么为什么要分层呢？<br>天啦噜，如果不分层，互联网只有一个协议，那万一突然有一个小地方需要改动，怎么办啊，整体换掉吗？<br>这个时候就体现出分层的好处了，只要把各层之间的接口部分规划好，你要修改哪，就直接替换掉相应的那层就好</p>
+</blockquote>
+<p>具体的各层：</p>
+<p>从上到下的四层，分别为<br>应用层（Application Layer）<br>传输层（Transport Layer）<br>网络层（Internet Layer）<br>连接层（Link Layer）</p>
+<p>可以这样理解：<br>最上面的应用层，顾名思义，是直接与用户打交道的一层，它的协议典型的有 http，FTP，DNS 等。</p>
+<p>第二层传输层，提供处于网络连接中的两台计算机之间的数据传输，负责传送文本数据，主要协议是TCP协议，UDP协议；</p>
+<p>第三层网络层，负责分配地址和传送二进制数据，主要协议是IP协议；</p>
+<p>第四层连接层，负责建立电路连接，是整个网络的物理基础，典型的协议包括以太网、ADSL等等；</p>
+<hr>
+
+<p>这个时候理所应当的举个栗子ಥ_ಥ</p>
+<p>以 HTTP 举例子：<br>0：你在客户端发送一个’我要看<a href="http://www.bilibili.com/" target="_blank" rel="external">B站</a>‘的请求；<br>1：这个请求理所应当的在应用层，然后从上到下的顺序，到了传输层；<br>2：传输层开始执行 TCP 协议，一看从应用层发过来的 http 请求，为了方便，它就把这个请求分割啊分割，打上标记号和端口号转发给了网络层；<br>3：网络层使用了 IP 协议，在 HTTP 协议上面增加了通信目的 Mac 地址，然后甩给了连接层；<br>4：连接层就默默的发送给了同在连接层 B 站的服务器</p>
+<p>接下来就是服务器从连接层一路向上，到了应用层，才算真正的接受到了这个 HTTP 请求，然后它会问一下 B站 的数据库，有没有你要的这个页面的数据，有的话就开始按照刚刚的做法，又倒过来发给你。</p>
+<p>IP 协议：负责传输<br>TCP 协议：负责安全，确保数据能够到达目标<br>DNS 服务：提供域名和 IP 地址相互之间的解析服务</p>
+<hr>
+
+<h3 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h3><p>URL：统一资源定位符，俗称网址</p>
+<p><strong>【协议+认证信息+@+网址+：+端口号】+带层次的文件路径+？+查询字符串+#+片段标志符</strong></p>
+<p>上面这个东西就是 URL</p>
+<p>其中：<br><strong>网址+:+端口号</strong>可以当做服务器<br><strong>带层次的文件路径</strong>不一定是真的文件路径，还有可能是逻辑路径<br><strong>片段标志符</strong>又名锚点，起到文档内定位的作用，注意<strong>锚点本身是不包含在请求里的</strong><br><strong>【】</strong>之间被包起来的是源，即origin<br>通过 location.origin可以拿到源，但是这个 IE8 以下是不支持的</p>
+<h3 id="HTTP-请求"><a href="#HTTP-请求" class="headerlink" title="HTTP 请求"></a>HTTP 请求</h3><p>通过上面吧啦吧啦的一大堆，就可以知道<strong>HTTP 请求是用于客户端和服务端之间的通信</strong></p>
+<p>HTTP 请求既然通信，那么一定会发送信息吧，所以信息又分为以下四部分：</p>
+<ol>
+<li>请求行</li>
+<li>请求头</li>
+<li>空行（就是一个回车）</li>
+<li>消息体</li>
+</ol>
+<p><strong>GET 请求，消息体一般是空的，但是没有规定不能是有内容</strong></p>
+<p><hr><br>举栗子：<br><img src="http://upload-images.jianshu.io/upload_images/1806506-f9be6356d7022117.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="栗子1"><br>请求行就是第一行，三部分组成，第一部分是请求方法，第二部分是请求路径，第三部分是HTTP版本。<br>然后下面的第二行开始一直到回车之间，就是请求头，由 key：value 组成。<br>由于这里是 get 请求的，所以没有消息体</p>
+<p>比如这个由 post 提交的请求<br><img src="http://upload-images.jianshu.io/upload_images/1806506-94c8085e803c5632.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="栗子2"><br>它就有了最下面的消息体，并且在请求头中还多了一行：content-type，图片写了 content-type 是 json，消息体也就是 json，所以<strong>消息体和 content-type 一般是同时出现的</strong></p>
+<p><strong>注意浏览器展示格式不是通过后缀，而是通过请求头里面写的 content-type 决定的</strong></p>
+<p>chrome 做了一些优化，可能与图片中看到的顺序不一样，但是不影响，只要点开 view source 就好。</p>
+<hr>
+
+<h3 id="HTTP-请求的方法："><a href="#HTTP-请求的方法：" class="headerlink" title="HTTP 请求的方法："></a>HTTP 请求的方法：</h3><p>实际上 HTTP 请求方法有很多，比如： PUT方法，DELETE方法，HEAD方法，CONNECT方法，TRACE方法，<br>但是最重要的还是 GET 和 POST 方法。</p>
+<p>那么 GET 和 POST 的区别有什么呢？</p>
+<blockquote>
+<p>首先，顾名思义，<strong>GET 用于获取资源（读资源），POST 用于更新资源（写资源）</strong><br>其次，<strong>上面已经清清楚楚的举栗子了，get 没有消息体，而 post 有消息体</strong>，但是实际上 get 是可以有 body，但是没人用吧<br>第三，<strong>post 比 get 安全一些</strong>，但是实际上都差不多啦，只是 post 伪造起来麻烦一点点而已，真的只是一点点。</p>
+</blockquote>
+<p>那么两种方法都用在哪呢？</p>
+<blockquote>
+<p>get</p>
+<ol>
+<li>输入一个 URL</li>
+<li>引用的图片，CSS，js 之类的</li>
+<li>用 jquery 的 $.get()</li>
+</ol>
+<p>post</p>
+<ol>
+<li>form 表单提交</li>
+<li>jquery 的 $.post()</li>
+</ol>
+</blockquote>
+<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>首先 http 是无状态的协议，它不对之前的请求和响应做出管理。<br>那么问题来了，那么岂不是我每次新打开一个页面，我就要登陆一次？WTF？黑人问号.jpg<br>为了解决这个问题，引入了 cookie 技术，通过在请求和响应中写入 cookie 信息来控制客户端的状态。<br>只要客户端保存了 cookie，下一次客户端发送请求的时候，客户端会自动在请求头中加入 cookie 值，服务器由于第一次已经接受了 cookie，当再次收到请求的时候，会对比服务器上的记录，最后得到你就是刚刚的用户这种状态消息。</p>
+<h3 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h3><p>这个我只记得200是好的，响应成功，404就是错误之类，貌似还有很多，不记得额。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTTP/" rel="tag">#HTTP</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/02/AJAX/" rel="prev" title="Ajax">
+                Ajax <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="//o768r1c9k.bkt.clouddn.com/photo.jpg"
+               alt="cocoon" />
+          <p class="site-author-name" itemprop="name">cocoon</p>
+          <p class="site-description motion-element" itemprop="description">这是 Huang Heqing 的博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP协议族"><span class="nav-number">1.</span> <span class="nav-text">TCP/IP协议族</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL"><span class="nav-number">2.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-请求"><span class="nav-number">3.</span> <span class="nav-text">HTTP 请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-请求的方法："><span class="nav-number">4.</span> <span class="nav-text">HTTP 请求的方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">5.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP状态码"><span class="nav-number">6.</span> <span class="nav-text">HTTP状态码</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cocoon</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

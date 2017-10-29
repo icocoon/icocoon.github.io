@@ -1,0 +1,1071 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HTML," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="//o768r1c9k.bkt.clouddn.com/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="这篇文章我翻译自w3schools.com，仅供参考，有需要的可以看原文哦 正式开始翻译啦">
+<meta name="keywords" content="HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5 New Elements">
+<meta property="og:url" content="http://blog.heqing.net.cn/2016/07/04/HTML5-New-Elements/index.html">
+<meta property="og:site_name" content="Cocoon Blog">
+<meta property="og:description" content="这篇文章我翻译自w3schools.com，仅供参考，有需要的可以看原文哦 正式开始翻译啦">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://o768r1c9k.bkt.clouddn.com/w3schools.png">
+<meta property="og:image" content="http://o768r1c9k.bkt.clouddn.com/%E6%94%AF%E6%8C%81%E6%96%B0%E7%9A%84%E8%BE%93%E5%85%A5%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8.png">
+<meta property="og:updated_time" content="2016-08-08T05:02:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5 New Elements">
+<meta name="twitter:description" content="这篇文章我翻译自w3schools.com，仅供参考，有需要的可以看原文哦 正式开始翻译啦">
+<meta name="twitter:image" content="http://o768r1c9k.bkt.clouddn.com/w3schools.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://blog.heqing.net.cn/2016/07/04/HTML5-New-Elements/"/>
+
+  <title> HTML5 New Elements | Cocoon Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80279815-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Cocoon Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">念念不忘，必有回响</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTML5 New Elements
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-04T12:24:50+08:00" content="2016-07-04">
+              2016-07-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://o768r1c9k.bkt.clouddn.com/w3schools.png" alt=""></p>
+<p>这篇文章我翻译自<a href="http://www.w3schools.com/" target="_blank" rel="external">w3schools.com</a>，仅供参考，有需要的可以看原文哦</p>
+<p>正式开始翻译啦<br><a id="more"></a></p>
+<hr>
+
+<p>下面是一些 HTML5 的新元素，还有一些它们用于哪些地方的描述。</p>
+<h3 id="新的语义-结构元素"><a href="#新的语义-结构元素" class="headerlink" title="新的语义/结构元素"></a>新的语义/结构元素</h3><p>HTML5 为了更好的文档结构提供了新的元素</p>
+<p>ps：因为 markdowm 语法的原因，<strong>我没有在标签上加上”&lt; &gt;”哦</strong></p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>article</td>
+<td style="text-align:left">在文档中定义一篇文章</td>
+</tr>
+<tr>
+<td>aside</td>
+<td style="text-align:left">定义页面内容之外的内容</td>
+</tr>
+<tr>
+<td>bdi</td>
+<td style="text-align:left">定义文本的文本方向，使其脱离其周围文本的方向设置</td>
+</tr>
+<tr>
+<td>details</td>
+<td style="text-align:left">定义其他详细信息，用户可以查看或隐藏</td>
+</tr>
+<tr>
+<td>dialog</td>
+<td style="text-align:left">定义对话框或窗口</td>
+</tr>
+<tr>
+<td>figcaption</td>
+<td style="text-align:left">定义 figure 元素的标题</td>
+</tr>
+<tr>
+<td>figure</td>
+<td style="text-align:left">定义自己包含的内容，如插图，图表，照片，代码,清单等</td>
+</tr>
+<tr>
+<td>footer</td>
+<td style="text-align:left">定义 section 或 page 的页脚</td>
+</tr>
+<tr>
+<td>header</td>
+<td style="text-align:left">定义 section 或 page 的页眉</td>
+</tr>
+<tr>
+<td>main</td>
+<td style="text-align:left">定义文档的主要内容</td>
+</tr>
+<tr>
+<td>mark</td>
+<td style="text-align:left">定义有记号的文本</td>
+</tr>
+<tr>
+<td>menuitem</td>
+<td style="text-align:left">定义用户可以从弹出菜单调用的命令/菜单项目</td>
+</tr>
+<tr>
+<td>meter</td>
+<td style="text-align:left">定义预定义范围内的度量</td>
+</tr>
+<tr>
+<td>nav</td>
+<td style="text-align:left">定义导航链接</td>
+</tr>
+<tr>
+<td>progress</td>
+<td style="text-align:left">定义一个任务的进度</td>
+</tr>
+<tr>
+<td>rp</td>
+<td style="text-align:left">定义若浏览器不支持 ruby 元素显示的内容</td>
+</tr>
+<tr>
+<td>rt</td>
+<td style="text-align:left">定义字符的解释或发音（东亚版）</td>
+</tr>
+<tr>
+<td>ruby</td>
+<td style="text-align:left">定义 ruby 注释（东亚版）</td>
+</tr>
+<tr>
+<td>section</td>
+<td style="text-align:left">定义 section</td>
+</tr>
+<tr>
+<td>summary</td>
+<td style="text-align:left">为 details 元素定义可见的标题</td>
+</tr>
+<tr>
+<td>time</td>
+<td style="text-align:left">定义日期/时间</td>
+</tr>
+<tr>
+<td>wbr</td>
+<td style="text-align:left">定义一个可能的换行符,在文本中的何处适合添加换行符</td>
+</tr>
+</tbody>
+</table>
+<p>阅读更多，请前往<a href="http://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank" rel="external">HTML5 Semantics</a>.</p>
+<h3 id="新的表单元素"><a href="#新的表单元素" class="headerlink" title="新的表单元素"></a>新的表单元素</h3><table>
+<thead>
+<tr>
+<th>标签</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datalist</td>
+<td style="text-align:left">用于描述文档或文档某个部分的细节</td>
+</tr>
+<tr>
+<td>keygen</td>
+<td style="text-align:left">定义生成密钥</td>
+</tr>
+<tr>
+<td>output</td>
+<td style="text-align:left">定义输出的一些类型</td>
+</tr>
+</tbody>
+</table>
+<p>阅读更多新的或者旧的表单元素，请前往<a href="http://www.w3schools.com/html/html_form_elements.asp" target="_blank" rel="external">HTML5 Semantics</a>.</p>
+<h3 id="新的输入类型"><a href="#新的输入类型" class="headerlink" title="新的输入类型"></a>新的输入类型</h3><table>
+<thead>
+<tr>
+<th>新的输入类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color</td>
+<td style="text-align:left">颜色</td>
+</tr>
+<tr>
+<td>date</td>
+<td style="text-align:left">日期</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td style="text-align:left">规定日期或时间</td>
+</tr>
+<tr>
+<td>datetime­local</td>
+<td style="text-align:left">本地日期时间</td>
+</tr>
+<tr>
+<td>email</td>
+<td style="text-align:left">邮件</td>
+</tr>
+<tr>
+<td>month</td>
+<td style="text-align:left">月份</td>
+</tr>
+<tr>
+<td>number</td>
+<td style="text-align:left">数字</td>
+</tr>
+<tr>
+<td>range</td>
+<td style="text-align:left">种类</td>
+</tr>
+<tr>
+<td>search</td>
+<td style="text-align:left">搜索</td>
+</tr>
+<tr>
+<td>tel</td>
+<td style="text-align:left">电话</td>
+</tr>
+<tr>
+<td>time</td>
+<td style="text-align:left">时间</td>
+</tr>
+<tr>
+<td>url</td>
+<td style="text-align:left">链接</td>
+</tr>
+<tr>
+<td>week</td>
+<td style="text-align:left">星期</td>
+</tr>
+</tbody>
+</table>
+<p>阅读更多新的输入类型，请前往<a href="http://www.w3schools.com/html/html_form_input_types.asp" target="_blank" rel="external">HTML Input Types</a></p>
+<blockquote>
+<p>下面是支持新的输入类型的浏览器<br><img src="http://o768r1c9k.bkt.clouddn.com/%E6%94%AF%E6%8C%81%E6%96%B0%E7%9A%84%E8%BE%93%E5%85%A5%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8.png" alt=""></p>
+</blockquote>
+<h3 id="新的输入属性"><a href="#新的输入属性" class="headerlink" title="新的输入属性"></a>新的输入属性</h3><table>
+<thead>
+<tr>
+<th>新的输入属性</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autocomplete</td>
+<td style="text-align:left">规定表单是否应该启用自动完成功能</td>
+</tr>
+<tr>
+<td>autofocus</td>
+<td style="text-align:left">规定当页面加载时 input 元素应该自动获得焦点</td>
+</tr>
+<tr>
+<td>form</td>
+<td style="text-align:left">用于创建供用户输入的 HTML 表单</td>
+</tr>
+<tr>
+<td>formaction</td>
+<td style="text-align:left">带有两个提交按钮的表单（不同的 action 值）</td>
+</tr>
+<tr>
+<td>formenctype</td>
+<td style="text-align:left">带有两个提交按钮的表单（带有不同的编码方式）</td>
+</tr>
+<tr>
+<td>formmethod</td>
+<td style="text-align:left">formmethod 属性覆盖 form 元素的 method 属性</td>
+</tr>
+<tr>
+<td>formnovalidate</td>
+<td style="text-align:left">formnovalidate 属性覆盖 form 元素的 novalidate属性。如果使用该属性，则提交表单时按钮不会执行验证过程。</td>
+</tr>
+<tr>
+<td>formtarget</td>
+<td style="text-align:left">提交一个在新窗口中打开的表单</td>
+</tr>
+<tr>
+<td>height and width</td>
+<td style="text-align:left">规定高度和宽度</td>
+</tr>
+<tr>
+<td>list</td>
+<td style="text-align:left">清单</td>
+</tr>
+<tr>
+<td>min and max</td>
+<td style="text-align:left">最小值和最大值</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td style="text-align:left">如果使用该属性，则字段可接受多个值</td>
+</tr>
+<tr>
+<td>pattern</td>
+<td style="text-align:left">规定用于验证输入字段的正则表达式</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td style="text-align:left">提供可描述输入字段预期值的提示信息（hint）。该提示会在输入字段为空时显示，并会在字段获得焦点时消失</td>
+</tr>
+<tr>
+<td>required</td>
+<td style="text-align:left">规定必需在提交之前填写输入字段。如果使用该属性，则字段是必填（或必选）的</td>
+</tr>
+<tr>
+<td>step</td>
+<td style="text-align:left">规定输入字段的合法数字间隔（假如 step=”3”，则合法数字应该是 -3、0、3、6，以此类推）</td>
+</tr>
+</tbody>
+</table>
+<p>阅读更多新的输入属性，请前往<a href="http://www.w3schools.com/html/html_form_attributes.asp" target="_blank" rel="external">HTML Input Attributes</a></p>
+<h3 id="HTML5图形"><a href="#HTML5图形" class="headerlink" title="HTML5图形"></a>HTML5图形</h3><table>
+<thead>
+<tr>
+<th>标签</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>canvas</td>
+<td style="text-align:left">定义使用JavaScript进行图形绘制</td>
+</tr>
+<tr>
+<td>svg</td>
+<td style="text-align:left">定义了使用矢量图进行图形绘制</td>
+</tr>
+</tbody>
+</table>
+<p>阅读更多，请前往<a href="http://www.w3schools.com/html/html5_canvas.asp" target="_blank" rel="external">HTML5 Canvas</a><br>阅读更多，请前往<a href="http://www.w3schools.com/html/html5_svg.asp" target="_blank" rel="external">HTML5 SVG</a></p>
+<h3 id="新媒体元素"><a href="#新媒体元素" class="headerlink" title="新媒体元素"></a>新媒体元素</h3><table>
+<thead>
+<tr>
+<th>标签</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>audio</td>
+<td style="text-align:left">标签定义声音，比如音乐或其他音频流</td>
+</tr>
+<tr>
+<td>embed</td>
+<td style="text-align:left">定义外部的应用程序（如插件）</td>
+</tr>
+<tr>
+<td>source</td>
+<td style="text-align:left">定义媒介来源</td>
+</tr>
+<tr>
+<td>track</td>
+<td style="text-align:left">为视频和音频定义文本轨道</td>
+</tr>
+<tr>
+<td>video</td>
+<td style="text-align:left">定义视频或电影内容</td>
+</tr>
+</tbody>
+</table>
+<p>阅读更多，请前往<a href="http://www.w3schools.com/html/html5_video.asp" target="_blank" rel="external">HTML5 Video</a><br>阅读更多，请前往<a href="http://www.w3schools.com/html/html5_audio.asp" target="_blank" rel="external">HTML5 Audio</a></p>
+<p>暂时翻译到这里ಥ_ಥ</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag">#HTML</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/04/Regular-Expression02/" rel="next" title="Regular Expression02">
+                <i class="fa fa-chevron-left"></i> Regular Expression02
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/06/Media-Query/" rel="prev" title="Media Query">
+                Media Query <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="//o768r1c9k.bkt.clouddn.com/photo.jpg"
+               alt="cocoon" />
+          <p class="site-author-name" itemprop="name">cocoon</p>
+          <p class="site-description motion-element" itemprop="description">这是 Huang Heqing 的博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#新的语义-结构元素"><span class="nav-number">1.</span> <span class="nav-text">新的语义/结构元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新的表单元素"><span class="nav-number">2.</span> <span class="nav-text">新的表单元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新的输入类型"><span class="nav-number">3.</span> <span class="nav-text">新的输入类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新的输入属性"><span class="nav-number">4.</span> <span class="nav-text">新的输入属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5图形"><span class="nav-number">5.</span> <span class="nav-text">HTML5图形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新媒体元素"><span class="nav-number">6.</span> <span class="nav-text">新媒体元素</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cocoon</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
