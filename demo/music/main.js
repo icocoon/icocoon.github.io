@@ -1,19 +1,9 @@
-var songs = [{
-	url: 'http://m2.music.126.net/49lMSA3it83GCxdy8BCE-w==/1174278418472188.mp3',
-	name: '勇气',
-	singer: '光良',
-	image: "http://o768r1c9k.bkt.clouddn.com/%E5%85%89%E8%89%AF.jpg",
-}, {
+var songs = [ {
 	url: 'http://o768r1c9k.bkt.clouddn.com/ninelie.m4a',
 	name: 'Ninelie',
 	singer: 'Aimer',
 	image: 'http://o768r1c9k.bkt.clouddn.com/ninelie.jpg'
 },{
-	url: 'http://m2.music.126.net/D7GY-8m9japXRmzBPlfovA==/3445869444824734.mp3',
-	name: '小幸运',
-	singer: '金玟岐',
-	image: "http://p3.music.126.net/1j5VLDiGdQo8nFlx-ORtiQ==/3250156382031364.jpg"
-}, {
 	url: 'http://obkhl70m6.bkt.clouddn.com/%E5%BC%A0%E6%99%BA%E6%88%90%20-%20%E4%BD%A0%E7%88%B1%E4%B8%8A%E7%9A%84%E6%88%91.m4a',
 	name: '你爱上的我',
 	singer: '张智成',
@@ -34,20 +24,10 @@ var songs = [{
 	singer: 'Sophie Zelmani',
 	image: 'http://o768r1c9k.bkt.clouddn.com/Sophie%20Zelmani%20-%20Breeze.jpg'
 }, {
-	url: 'http://o768r1c9k.bkt.clouddn.com/%E6%9E%97%E4%BF%8A%E6%9D%B0%20-%20%E4%BF%AE%E7%82%BC%E7%88%B1%E6%83%85.mp3',
-	name: '修炼爱情',
-	singer: '林俊杰',
-	image: 'http://o768r1c9k.bkt.clouddn.com/%E4%BF%AE%E7%82%BC%E7%88%B1%E6%83%85.jpg',
-}, {
 	url: 'http://o768r1c9k.bkt.clouddn.com/%E9%87%91%E6%B1%A0%20-%20%E5%8B%87%E6%B0%A3%20%28%E5%AE%98%E6%96%B9%E6%AD%8C%E8%A9%9E%E7%89%88%29%20-%20%E9%9B%BB%E8%A6%96%E5%8A%87%E3%80%8A%E5%B0%8F%E4%B8%88%E5%A4%AB%E3%80%8B%E7%89%87%E5%B0%BE%E6%9B%B2.mp3',
 	name: '勇气',
 	singer: '金池',
 	image: "http://o768r1c9k.bkt.clouddn.com/%E9%87%91%E6%B1%A0.jpg"
-},{
-	url:'http://o768r1c9k.bkt.clouddn.com/Faded.mp3',
-	name:'Faded',
-	singer:'Alan Walker',
-	image:'http://img.xiami.net/images/album/img88/2100004888/21002747241455451999.jpg'
 },{
 	url:'http://o768r1c9k.bkt.clouddn.com/Charlie%20Puth,Selena%20Gomez%20-%20We%20Don%27t%20Talk%20Anymore.mp3',
 	name:"We Don't Talk Anymore",
@@ -185,7 +165,7 @@ $('#a-share').click(function() {
 
 
 //自动播放
-play(10);
+play(0);
 updateProgress();
 
 //自动下一首
